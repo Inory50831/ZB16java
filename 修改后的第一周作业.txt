@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	int m=1,p=3,q=5;
+	printf("请输入一个正整数\n");
+	scanf("%d",&n);
+	if(n%6==1||n%6==2)
+		printf("%d",m);
+	if(n%6==3||n%6==4)
+		printf("%d",p);
+	if(n%6==0||n%6==5)
+		printf("%d",q);
+	return 0;
+}

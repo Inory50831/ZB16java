@@ -1,1 +1,36 @@
-#include <stdio.h>
+import java.util.*;
+public class Joseph 
+{
+    public int getResult(int n)
+    {
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        ArrayList<Integer> goAwayList = new ArrayList<Integer>();
+        for (int i = 0; i < n; i++)
+        {
+            list.add(i + 1);
+        }
+        int exist = n;
+        int goAway = 2;
+        while (exist != 1) 
+        {
+            for (int i = 1; i <= exist; i++)
+            {
+                    if (i % goAway != 1 && !goAwayList.contains(i-1)) 
+                    {
+                            goAwayList.add(i - 1);
+                    }
+            }
+            for (int i = goAwayList.size() - 1; i >= 0; i--)
+            {
+     
+                list.remove(list.get(goAwayList.get(i)));
+                exist--;
+            }
+            goAwayList.clear();
+            list.addFirst(list.removeLast());
+            goAway++;
+        }
+        return list.pop();
+    }
+}
+  
